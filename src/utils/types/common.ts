@@ -9,3 +9,7 @@ export type PaginationOptionParams = {
   currentPage?: number
   perPage?: number
 }
+
+export type LayoutProps = {
+  children: React.ReactNode
+}
