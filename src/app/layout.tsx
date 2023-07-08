@@ -3,8 +3,7 @@ import '@/styles/globals.scss'
 
 import { Open_Sans } from 'next/font/google'
 
-import { Footer } from '@/components/Footer'
-import { Navbar } from '@/components/Navbar'
+import { LayoutProps } from '@/utils/types'
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -20,11 +19,7 @@ export const metadata = {
     'A starter template to build amazing static websites with Next.js and Tailwind CSS',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang='en'>
       <link
@@ -34,13 +29,7 @@ export default function RootLayout({
         href='/assets/favicons/favicon.ico'
       />
       <body className={openSans.variable} suppressHydrationWarning>
-        <div className='flex min-h-screen flex-col justify-between'>
-          <div>
-            <Navbar />
-            <main>{children}</main>
-          </div>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   )

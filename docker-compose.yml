@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  backend:
+    image: foysal0075/nest-lms-backend:nest-lms-backend
+    ports:
+      - 5001:5001
